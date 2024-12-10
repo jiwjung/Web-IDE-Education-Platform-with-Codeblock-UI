@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jupyter-Lite Drag-and-Drop</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar" id="sidebar">
+            <h3 id="sidebarTitle">Code Blocks</h3>
+            <button class="toggle-button" id="toggleButton">
+                <svg id="toggleIcon" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" class="h-6 w-6" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M4.40347 3.90332L2.98926 5.31753L6.17124 8.49951L2.98926 11.6815L4.40347 13.0957L8.99967 8.49951L4.40347 3.90332ZM20.9997 19.9995V17.9995H2.99967V19.9995H20.9997ZM20.9997 12.9995V10.9995H11.9997V12.9995H20.9997ZM20.9997 5.99951V3.99951H11.9997V5.99951H20.9997Z"></path>
+                </svg>
+            </button>
+            <div class="block" draggable="true">print('Hello, Jupyter-lite!')</div>
+            <div class="block" draggable="true">for i in range(1, 6): print(i * '*')</div>
+            <div class="block" draggable="true">numbers = [1, 2, 3, 4, 5]; print(sum(numbers))</div>
+            <div class="block" draggable="true">def greet():
+    print('Welcome!');
+greet()</div>
+            <div class="block" draggable="true">import math; print(math.pi)</div>
+            <div class="block" draggable="true">x = 10; y = 20; print(x + y)</div>
+            <div class="block" draggable="true">if 5 > 3: print('5 is greater than 3')</div>
+            <div class="block" draggable="true">x = [i**2 for i in range(5)]; print(x)</div>
+            <div class="block" draggable="true">#인하공전 학식 메뉴 request
+import requests, json
+
+response = requests.get('http://api.jwjung.kro.kr:22212/inhatc/')
+json_txt = json.dumps(response.json(), indent=4, ensure_ascii=False)
+print(json_txt)</div>
+        </div>
+
+
+        <div class="content-container" id="content-container">
+            <div class="iframe-container">
+                <iframe id="jupyter-iframe" src="/jupyter-lite/index.html"></iframe>
+            </div>
+
+            <div class="divider" id="divider"></div>
+
+            <div class="video-container">
+                <div class="checkbox-container">
+                    <div>
+                        <label>
+                            <input type="checkbox" id="checkboxAutoExecution" checked>자동 실행
+                        </label><br>
+                        <label>
+                            <input type="checkbox" id="checkboxAutoInsert">자동 삽입
+                        </label>
+                    </div>
+                    <select id="fileSelect"><option value="" disabled selected>.ipynb</option></select>
+                    <button id="jupyterSubmitButton">제출</button>
+                
+                </div>
+                <video id="video-player" controls>
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+    <script src="script.js"></script>
+</body>
+</html>

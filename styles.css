@@ -1,0 +1,166 @@
+/* General Styling */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Container Styling */
+.container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+/* Sidebar Styling */
+.sidebar {
+    width: 300px; /* Fixed width for the sidebar */
+    padding: 20px;
+    background-color: #ffffff;
+    border-right: 2px solid #d1d1d1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    overflow-y: auto;
+    position: fixed; /* Fixing the sidebar */
+    height: 100%;
+    transition: width 0.3s; /* Transition for width change */
+    overflow: auto;
+    scrollbar-width: none;
+}
+
+.sidebar.collapsed {
+    width: 80px;
+}
+
+.sidebar.collapsed h3 {
+    display: none; /* 사이드바가 접혔을 때 h3 숨기기 */
+}
+
+.toggle-button {
+    width: 40px;
+    height: 20px;
+}
+
+h3 {
+    display: inline; /* h3를 inline으로 설정하여 버튼과 같은 라인에 위치 */
+    font-size: 1.5rem;
+    text-align: center;
+    color: #0056b3;
+}
+
+
+.block {
+    padding: 12px;
+    background-color: #1976d2;
+    border-radius: 6px;
+    cursor: grab;
+    font-size: 0.9rem;
+    color: #ffffff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: all 0.2s;
+}
+.block:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+/* Content Container Styling */
+.content-container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    margin-left: 300px; /* Make space for the sidebar */
+}
+
+.iframe-container {
+    flex-grow: 1;
+    padding: 15px;
+    background-color: #f8f8f8;
+    height: 100%;
+    overflow: hidden;
+}
+
+iframe {
+    width: 100%;
+    height: 100%;
+    border: 2px solid #d1d1d1;
+    border-radius: 8px;
+}
+
+.divider {
+    flex-grow: 0;
+    cursor: ew-resize;
+    width: 10px;
+    background-color: #ddd;
+    height: 100%;
+    border-left: 2px solid #ccc;
+    border-right: 2px solid #ccc;
+}
+
+.video-container {
+    width: 30%;
+    min-width: 20%;
+    height: 100%;
+    padding: 20px;
+    background-color: #f8f8f8;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow-y: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.checkbox-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+
+select {
+    width: auto; /* 부모 요소의 너비에 맞춰 조정 */
+    min-width: 30px; /* 내용이 없을 때 기본 폭 지정 */
+    padding: 5px; /* 내부 여백 */
+    border: 1px solid #ccc; /* 테두리 색상 */
+    border-radius: 4px; /* 모서리 둥글게 */
+    background-color: #fff; /* 배경색 */
+    font-size: 12px; /* 글자 크기 */
+}
+
+
+#jupyterSubmitButton {
+    background-color: #1976d2;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#jupyterSubmitButton:hover {
+    background-color: #0056b3;
+}
+
+video {
+    width: 100%;
+    max-height: 90%;
+    border-radius: 8px;
+    margin-top: 10px;
+}

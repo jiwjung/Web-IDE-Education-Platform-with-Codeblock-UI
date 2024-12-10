@@ -1,0 +1,15 @@
+server {
+    listen 80;
+    server_name jupyter.jwjung.org;
+
+    # Root path
+    root /var/www/jupyter;
+    
+    # Default index file
+    index index.html;
+
+    # Serve static files for JavaScript, CSS, and WebAssembly
+    location ~* \.(js|css|wasm|woff|woff2|svg|png|ico|json|map)$ {
+        try_files $uri =404;
+    }
+}
