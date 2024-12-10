@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pyodide VSCode</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/pyodide/v0.21.3/full/pyodide.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js"></script>
+</head>
+<body>
+    <div class="vscode-ui">
+        <div class="editor-section">
+            <div id="editor"></div>
+            <button onclick="runCode()" class="run-button">Run Code</button>
+            <div class="console-tabs">
+                <button onclick="showConsole('pythonConsole')" id="pythonTab" class="active-tab">Python Console</button>
+                <button onclick="showConsole('browserConsole')" id="browserTab">Browser Console</button>
+            </div>
+            <div id="pythonConsole" class="output-console active-console"></div>
+            <div id="browserConsole" class="output-console"></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

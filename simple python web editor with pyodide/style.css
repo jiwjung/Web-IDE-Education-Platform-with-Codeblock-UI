@@ -1,0 +1,97 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #1e1e1e;
+    color: #d4d4d4;
+}
+
+.vscode-ui {
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+}
+
+.editor-section {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+#editor {
+    flex-grow: 1;
+    border-bottom: 1px solid #333;
+}
+
+.output-console {
+    background-color: #1e1e1e;
+    color: #d4d4d4;
+    font-family: monospace;
+    padding: 10px;
+    height: 30%;
+    overflow-y: auto;
+    border-top: 1px solid #333;
+    display: none;
+}
+
+.active-console {
+    display: block;
+}
+
+.console-tabs {
+    display: flex;
+    justify-content: flex-start;
+    background-color: #333;
+    color: #d4d4d4;
+    border-bottom: 1px solid #333;
+}
+
+.console-tabs button {
+    background-color: #333;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    color: #d4d4d4;
+    transition: background-color 0.2s ease;
+}
+
+.console-tabs button:hover {
+    background-color: #444;
+}
+
+.active-tab {
+    background-color: #1e1e1e;
+    border-bottom: 2px solid #0e639c;
+}
+
+.run-button {
+    background-color: #0e639c;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.run-button:hover {
+    background-color: #1177bb;
+}
+
+/* Responsive Layout */
+@media (min-width: 768px) {
+    .vscode-ui {
+        flex-direction: row;
+    }
+    .sidebar {
+        width: 200px;
+        height: 100vh;
+    }
+    .editor-section {
+        width: calc(100% - 200px);
+    }
+}
