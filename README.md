@@ -67,7 +67,7 @@ Pyodide는 WASM 위에서 Python 인터프리터를 실행할 수 있도록 CPyt
 
 **URL** : http://pyodide.jwjung.org
 
-![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/20994035-b18b-485a-9874-5b773e7198be/bafc8cb6-ace7-43c0-9196-b4a5eec8e34f/image.png)
+![image](https://github.com/user-attachments/assets/b8a7fb23-6dd3-4107-bea4-6740f41a62b7)
 
 ---
 
@@ -176,7 +176,7 @@ LMS에서 코딩 과제를 제출하는 상황을 생각해보자. 교육자는 
             ※ LMS 서버와의 연결 부분을 제외하곤 이미 자체적으로 구현 완료됨.
             
 
-![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/20994035-b18b-485a-9874-5b773e7198be/c745801c-4275-43cf-8fd1-094ec5bdd6e8/image.png)
+![image](https://github.com/user-attachments/assets/33d88464-a373-4b69-9ebd-1ee026a51ae3)
 
 ### Left Tab : Code blocks
 
@@ -201,13 +201,11 @@ LMS에서 코딩 과제를 제출하는 상황을 생각해보자. 교육자는 
 
 ### System Structure Diagram
 
-![그림2.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/20994035-b18b-485a-9874-5b773e7198be/1e3da52f-391d-4382-8425-0f8162560783/%EA%B7%B8%EB%A6%BC2.png)
+![image](https://github.com/user-attachments/assets/533efb07-e9d7-4e7c-9e84-8fda6a5e8fa1)
 
 ### 사용 기술
 
-![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/20994035-b18b-485a-9874-5b773e7198be/50e17737-fb70-4b87-9cfe-d03cc2a3274b/2ac0a1d2-5ffb-4a2a-b834-c3df6c444bc6.png)
-
-[]()
+![image](https://github.com/user-attachments/assets/d1ec3be6-9329-459b-a038-fab6260f1e61)
 
 ---
 
