@@ -4,13 +4,40 @@ const checkboxAutoExecution = document.getElementById("checkboxAutoExecution");
 const checkboxAutoInsert = document.getElementById("checkboxAutoInsert");
 
 document.addEventListener('DOMContentLoaded', () => {
-    // 비디오 로드
-    setTimeout(() => videoLoad(courseInfo['videoUrl']), 50);
+    let courseInfo = {};
+    const urlParams = new URLSearchParams(window.location.search);
+    const courseInfoUrl = urlParams.has('course') 
+        ? `http://jupyter.jwjung.org/${urlParams.get('course')}/info.json`
+        : `/default_course/info.json`;
 
-    // Jupyter-lite WASM 로딩 후 .ipynb 파일 열기
+    fetch(courseInfoUrl)
+        .then(response => response.json())
+        .then(data => {
+            courseInfo = data;
+            const sidebar = document.getElementById('sidebar');
+            courseInfo.codes.forEach(code => {
+                const block = document.createElement('div');
+                block.className = 'block';
+                block.draggable = true;
+                block.textContent = code;
+                sidebar.appendChild(block);
+            })
+            videoLoad(courseInfo['videoUrl']);
+        })
+        .catch(err => console.error('강좌 정보 불러오기 실패:', err));
+
+    // Jupyter-lite WASM 로딩 후
     setTimeout(() => {
+        // .ipynb 파일 열기
         iframe.contentWindow.jupyterapp.commands.execute('filebrowser:open-url', { url: courseInfo['ipynbUrl'] });
-    }, 2500);
+
+        // 코드블럭에 드래그 앤 드롭 설정
+        document.querySelectorAll('.block').forEach(block => {
+            block.addEventListener('dragstart', event => {
+                event.dataTransfer.setData('text/plain', block.textContent);
+            });
+        });
+    }, 1500);
 });
 
 
@@ -30,13 +57,8 @@ toggleButton.addEventListener('click', () => {
 });
 
 
-// ** 코드블록 드래그 앤 드롭 기능 **
-document.querySelectorAll('.block').forEach(block => {
-    block.addEventListener('dragstart', event => {
-        event.dataTransfer.setData('text/plain', block.textContent);
-    });
-});
 
+// ** 코드블록 드래그 앤 드롭 기능 **
 document.addEventListener('dragend', async event => {
     const code = event.target.textContent;
     if (iframe && code) {

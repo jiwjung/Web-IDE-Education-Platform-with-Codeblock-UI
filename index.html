@@ -1,34 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jupyter-Lite Drag-and-Drop</title>
-    <link rel="stylesheet" href="/styles.css">
-    <script async>
-        let courseInfo = {};
-        const urlParams = new URLSearchParams(window.location.search);
-        const courseInfoUrl = urlParams.has('course') 
-            ? `http://jupyter.jwjung.org/${urlParams.get('course')}/info.json`
-            : `http://jupyter.jwjung.org/default.json`;
-
-        fetch(courseInfoUrl)
-            .then(response => response.json())
-            .then(data => {
-                courseInfo = data;
-                const sidebar = document.getElementById('sidebar');
-                courseInfo.codes.forEach(code => {
-                    const block = document.createElement('div');
-                    block.className = 'block';
-                    block.draggable = true;
-                    block.textContent = code;
-                    sidebar.appendChild(block);
-                });
-            })
-            .catch(err => console.error('강좌 정보 불러오기 실패:', err));
-
-    </script>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
@@ -73,6 +50,6 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
-    <script src="/script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

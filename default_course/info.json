@@ -1,0 +1,15 @@
+{
+    "submitUrl": "http://jupyter.jwjung.org/submit",
+    "videoUrl": "https://dyckms5inbsqq.cloudfront.net/AP4B/C1/L4/sc-AP4B-C1-L4-master.m3u8",
+    "ipynbUrl": "http://jupyter.jwjung.org/default_course/python_basic.ipynb",
+    "codes": [
+        "print('Hello, Jupyter-lite!')",
+        "for i in range(1, 6): print(i * '*')",
+        "numbers = [1, 2, 3, 4, 5]\nprint(sum(numbers))",
+        "def greet():\n    print('Welcome!')\ngreet()",
+        "import math\nprint(math.pi)",
+        "x = 10\ny = 20\nprint(x + y)",
+        "if 5 > 3:\n    print('5 is greater than 3')",
+        "x = [i**2 for i in range(5)]\nprint(x)"
+    ]
+}
